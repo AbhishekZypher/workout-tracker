@@ -6,6 +6,7 @@ const getWorkouts = async (req, res) => {
     const workouts = await Workout.find({}).sort({ createdAt: -1 })
     res.status(200).json(workouts);
 }
+
 // get single workout
 const getWorkout = async (req, res) => {
     const { id } = req.params;
@@ -44,6 +45,7 @@ const deleteWorkout = async (req, res) => {
     }
     res.status(200).json('Workout deleted successfully')
 }
+
 // update a workout
 const updateWorkout = async (req, res) => {
     const { id } = req.params

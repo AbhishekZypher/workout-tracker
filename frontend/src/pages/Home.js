@@ -7,10 +7,8 @@ import WorkoutForm from "../components/WorkoutForm"
 
 const Home = () => {
     const { workouts, dispatch } = useWorkoutsContext();
-    console.log(dispatch)
     useEffect(() => {
         const fetchWorkouts = async () => {
-            console.log('inside useEffect')
             const response = await fetch('/api/workouts')
             const json = await response.json()
 
@@ -24,7 +22,6 @@ const Home = () => {
 
     return (
         <div className="home">
-            {console.log('JSX block')}
             <div className="workouts">
                 {workouts && workouts.map(workout => (
                     <WorkoutDetails workout={workout} key={workout._id} />
